@@ -1,0 +1,53 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: 50px 50px 50px;
+    grid-template-rows: 50px 50px 50px;
+}
+
+.space {
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+/* Remove top border for the first row */
+.space:nth-child(-n + 3) {
+    border-top: none;
+    border-bottom: 2px solid #000; /* Darker bottom border for top row */
+}
+
+/* Remove bottom border for the last row */
+.space:nth-last-child(-n + 3) {
+    border-bottom: none;
+}
+
+/* Remove left border for the first column */
+.space:nth-child(3n-2) {
+    border-left: none;
+}
+
+/* Remove right border for the last column */
+.space:nth-child(3n) {
+    border-right: none;
+}
+
+h5 {
+    margin: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.hovered {
+    background-color: lightskyblue;
+    cursor: pointer;
+}
